@@ -1,0 +1,17 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <!--渐变色 550ba78c  0ba78c  280ba78c-->
+    <!-- angle -设置角度-->
+    <gradient
+        android:angle="90"
+
+        android:startColor="#ffffff"
+        android:centerColor="#f0eeee"
+
+        android:endColor="#ffffff"
+
+        android:type="linear" />
+</shape>
+
+ <!--   android:endColor="#0ba78c"
+    android:startColor="#280ba78c"-->

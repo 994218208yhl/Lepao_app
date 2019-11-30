@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/plan_bg"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/book"/>
+
+        <TextView
+            android:layout_marginTop="20dp"
+            android:id="@+id/plan_rungoal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:drawableLeft="@mipmap/plan_run2"
+            android:text="运动目标"
+            android:textColor="@color/color_black"
+            android:textSize="18dp" />
+
+        <TextView
+            android:layout_marginTop="20dp"
+            android:id="@+id/plan_distance"
+            android:layout_marginLeft="80dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:text="0"
+            android:textSize="30dp"
+            android:textStyle="bold"/>
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" 
+                android:text="KM"/>
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <SeekBar
+            android:id="@+id/progress_distance"
+            android:layout_marginLeft="30dp"
+            android:layout_width="300dp"
+            android:maxHeight="3.4dp"
+            android:minHeight="3.4dp"
+            android:layout_height="wrap_content"
+            android:max ="15"
+           android:thumb="@drawable/ios_thumb_selector"
+            android:progressDrawable="@drawable/seek_distance_bar_bg"
+            />
+        <TextView
+            android:id="@+id/plan_cal"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="150dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="约0千卡"
+            android:textSize="12sp"/>
+        <TextView
+            android:layout_marginLeft="160dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="相当于"
+            android:textSize="12sp"/>
+        <LinearLayout
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/plan_rice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableStart="@mipmap/plan_rice2"
+                android:layout_weight="1"
+                android:text="0 碗"
+                android:textSize="12sp"/>
+            <TextView
+                android:id="@+id/plan_chicken"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableStart="@mipmap/plan_chicken2"
+                android:text="0 只"
+                android:textSize="12sp"/>
+            <TextView
+                android:id="@+id/plan_ham"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableStart="@mipmap/plan_ham2"
+                android:text="0 个"
+                android:textSize="12sp"/>
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line"
+            android:layout_marginTop="30dp"
+            android:background="#ffe8e8e8" />
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_marginLeft="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+        <TextView
+            android:id="@+id/plan_weightgoal"
+            android:layout_marginLeft="25dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@mipmap/plan_weight"
+            android:text="体重目标"
+            android:textSize="18dp"
+            android:textColor="@color/color_black"/>
+
+            <TextView
+                android:id="@+id/plan_weight"
+                android:layout_marginLeft="100dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="30dp"
+                android:textStyle="bold"/>
+            <TextView
+                android:layout_marginLeft="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="KG"/>
+        </LinearLayout>
+
+        <SeekBar
+            android:id="@+id/progress_weight"
+            android:layout_width="300dp"
+            android:layout_marginLeft="40dp"
+            android:maxHeight="3.4dp"
+            android:minHeight="3.4dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="30dp"
+            android:max="150"
+            android:progressDrawable="@drawable/seek_weight_bar_bg"
+            android:thumb="@drawable/ios_thumb_selector" />
+        <View
+
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line"
+            android:layout_marginTop="20dp"
+            android:background="#ffe8e8e8" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="15dp"
+                android:layout_marginLeft="20dp"
+                android:text="每日提醒" />
+
+            <com.kyleduo.switchbutton.SwitchButton
+                android:id="@+id/switchButton"
+                style="@style/SwitchButtonMD"
+                android:layout_width="140dp"
+                android:layout_height="@dimen/dp_10"
+                android:layout_marginLeft="200dp"
+                android:checked="false"
+                app:kswAnimationDuration="300"
+                app:kswBackDrawable="@drawable/ios_back_drawable"
+                app:kswBackMeasureRatio="1.4"
+                app:kswThumbDrawable="@drawable/ios_thumb_selector"
+                app:kswThumbHeight="10dp"
+                app:kswThumbMarginBottom="-8dp"
+                app:kswThumbMarginLeft="-5dp"
+                app:kswThumbMarginRight="-5dp"
+                app:kswThumbMarginTop="-2.5dp"
+                app:kswThumbWidth="10dp" />
+
+        </LinearLayout>
+        <View  android:layout_height="1px"
+            android:layout_width="match_parent"
+            android:background="#C0C0C0" />
+        <LinearLayout
+            android:id="@+id/ll_plan_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#00ffffff"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:text="提醒时间"
+                android:layout_gravity="center"
+                android:textSize="15dp"
+                android:layout_marginLeft="20dp" />
+            <TextView
+                android:id="@+id/plan_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00:00"
+                android:textSize="20dp"
+                android:layout_marginLeft="200dp" />
+
+        </LinearLayout>
+        <View  android:layout_height="1px"
+            android:layout_width="match_parent"
+            android:background="#C0C0C0" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+        <Button
+            android:id="@+id/plan_save"
+            android:layout_width="150dp"
+            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_button"
+            android:text="保存"
+           />
+
+
+
+
+
+
+
+
+
+</LinearLayout>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_home_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:padding="2dp"
+        android:text="时间：昨天 00:32"
+        android:textColor="#ffffff"
+        android:textSize="@dimen/tab_textsize"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_home_left_ic"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:src="@drawable/tulin_icon1" />
+
+        <TextView
+            android:id="@+id/tv_home_left_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="@dimen/itemize_margin"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="@dimen/itemize_margin"
+            android:layout_toEndOf="@+id/iv_home_left_ic"
+            android:background="@drawable/home_shape_bg_left"
+            android:padding="@dimen/itemize_margin"
+            android:paddingTop="10dp"
+            android:text="你好！！！"
+            android:textColor="#ffffff"
+            android:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/iv_home_right_ic"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:src="@mipmap/ic_launcher_round"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_home_right_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="@dimen/itemize_margin"
+            android:layout_marginTop="@dimen/itemize_margin"
+            android:layout_toLeftOf="@+id/iv_home_right_ic"
+            android:layout_toStartOf="@+id/iv_home_right_ic"
+            android:background="@drawable/home_shape_bg_right"
+            android:padding="@dimen/itemize_margin"
+            android:paddingTop="10dp"
+            android:text="你好你好你好你好！！！"
+            android:textColor="#ffffff"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,50 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/talk"
+    android:layout_height="match_parent">
+
+<android.support.v7.widget.RecyclerView
+    android:layout_weight="1"
+    android:id="@+id/recy_message_list"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:dividerHeight="10dp" />
+
+<android.support.v7.widget.CardView
+android:layout_margin="5dp"
+android:layout_width="match_parent"
+android:layout_height="wrap_content">
+
+<LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <EditText
+        android:id="@+id/et_input"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:lineSpacingMultiplier="1.4"
+        android:background="@null"
+
+        android:layout_marginLeft="16dp"
+        android:layout_weight="1"
+        android:textCursorDrawable="@drawable/cursor_color" />
+
+    <ImageButton
+        android:layout_gravity="center_vertical"
+        android:id="@+id/btn_send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="16dp"
+        android:background="@null"
+        android:src="@drawable/ic_send_black_24dp" />
+</LinearLayout>
+
+
+</android.support.v7.widget.CardView>
+
+    </LinearLayout>

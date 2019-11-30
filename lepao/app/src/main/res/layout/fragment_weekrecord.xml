@@ -1,0 +1,215 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_marginLeft="100dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="运动距离"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:textColor="#666666"/>
+        <ImageView
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="60dp"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:background="@color/color_background"/>
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="公里"
+            android:textSize="10sp"
+            android:textColor="#666666"/>
+    </LinearLayout>
+
+
+    <lecho.lib.hellocharts.view.LineChartView
+        android:id="@+id/week_line_chart"
+        android:layout_width="240dp"
+        android:layout_height="160dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="30dp"
+        android:background="#ffffff"
+      />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_marginTop="24dp"
+            android:layout_marginLeft="60dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="运动时长和热量消耗"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:textColor="#666666"/>
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp">
+
+                <LinearLayout
+                    android:id="@+id/color_min"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+            <ImageView
+                android:layout_marginTop="15dp"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:background="#FF009688"/>
+            <TextView
+                android:layout_marginTop="12dp"
+                android:layout_marginLeft="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="分钟"
+                android:textSize="10sp"
+                android:textColor="#666666"/>
+            ></LinearLayout>
+
+            <LinearLayout
+                android:layout_below="@+id/color_min"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_marginTop="2dp"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:background="#FFCD41"/>
+                <TextView
+
+                    android:layout_marginLeft="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="千卡"
+                    android:textSize="10sp"
+                    android:textColor="#666666"/>
+                ></LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    <lecho.lib.hellocharts.view.ColumnChartView
+        android:id="@+id/week_column_chart"
+        android:layout_width="240dp"
+        android:layout_height="165dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="30dp"
+        android:background="#ffffff"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="40dp"
+            android:textColor="#666666"
+            android:textSize="@dimen/sp_12"
+            android:text="当日指标平均值"/>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+
+            <LinearLayout
+                android:id="@+id/data_above"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="60dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:src="@mipmap/data_distance"/>
+                <TextView
+                    android:id="@+id/today_mdistance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:text="0.00 km"
+                    android:textSize="@dimen/sp_12"
+                    android:textColor="#666666"/>
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_marginLeft="35dp"
+                    android:src="@mipmap/data_time"/>
+                <TextView
+                    android:id="@+id/today_mduration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:text="0.00 min"
+                    android:textSize="@dimen/sp_12"
+                    android:textColor="#666666"/>
+                
+            </LinearLayout>
+            <LinearLayout
+                android:layout_below="@+id/data_above"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="60dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:src="@mipmap/data_kcal"/>
+                <TextView
+                    android:id="@+id/today_mkcal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:text="0.00 kcal"
+                    android:textSize="@dimen/sp_12"
+                    android:textColor="#666666"/>
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_marginLeft="30dp"
+                    android:src="@mipmap/data_speed"/>
+                <TextView
+                    android:id="@+id/today_mspeed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:text="0.0 km/h"
+                    android:textSize="@dimen/sp_12"
+                    android:textColor="#666666"/>
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

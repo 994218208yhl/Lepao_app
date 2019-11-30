@@ -1,0 +1,261 @@
+package com.liuzozo.stepdemo.fragment;
+
+import android.content.Context;
+import android.graphics.Color;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+
+import com.liuzozo.stepdemo.OtherFunction.MyApplication;
+import com.liuzozo.stepdemo.OtherFunction.StepUtils;
+import com.liuzozo.stepdemo.R;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import lecho.lib.hellocharts.gesture.ContainerScrollType;
+import lecho.lib.hellocharts.gesture.ZoomType;
+import lecho.lib.hellocharts.model.Axis;
+import lecho.lib.hellocharts.model.AxisValue;
+import lecho.lib.hellocharts.model.Column;
+import lecho.lib.hellocharts.model.ColumnChartData;
+import lecho.lib.hellocharts.model.PieChartData;
+import lecho.lib.hellocharts.model.PointValue;
+import lecho.lib.hellocharts.model.SliceValue;
+import lecho.lib.hellocharts.model.SubcolumnValue;
+import lecho.lib.hellocharts.model.Viewport;
+import lecho.lib.hellocharts.view.ColumnChartView;
+import lecho.lib.hellocharts.view.LineChartView;
+import lecho.lib.hellocharts.view.PieChartView;
+
+public class MonthRecord_Fragment extends Fragment {
+    private Context context;
+    private ColumnChartView columnChart;
+    private PieChartView pieChart;
+    double[] mintues =new double[4];
+    double[] distance = new double[4];
+    String[] date0 = StepUtils.getRecentDays(28);
+    String[] date = new String[]{"1","2","3","4"};
+    ArrayList<double[]> totalData ;
+    List<Integer> color = new ArrayList<>();
+    TextView dataTrend ;
+
+    /*    String[] date = {"10-22","11-22","12-22","1-22","6-22","5-23","5-22","6-22","5-23","5-22"};//X轴的标注*/
+    /*int[] score= {50,42,90,33,10,74,22,18,79,20};//图表的数据点*/
+
+
+
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_monthrecord, container,
+                false);
+        columnChart = view.findViewById(R.id.month_column_chart);
+        pieChart = view.findViewById(R.id.month_pie_chart);
+        dataTrend = view.findViewById(R.id.data_trend);
+        context = MyApplication.getContext();
+        setData();
+        initColumnChart();
+        initPieChart();
+
+
+        return view;
+    }
+
+    private void setData(){
+        totalData = StepUtils.getMinDisCal(context, 28);
+        for(int i = 0 ; i < 4 ; i++){
+            mintues[i] = 0;
+            distance[i] = 0;
+            for(int j = 0 ; j < 7 ;j++){
+                mintues[i] += totalData.get(i * 7 + j)[1];
+                distance[i]+= totalData.get(i * 7 + j)[0];
+            }
+
+        }
+
+        //颜色值
+
+        color.add(Color.parseColor("#009688"));
+        color.add(Color.parseColor("#4CAF50"));
+        color.add(Color.parseColor("#8BC34A"));
+        color.add(Color.parseColor("#CDDC39"));
+
+        //数据分析
+        String trend ="";
+        if(distance[0] > distance [1])
+            trend += "最近一周运动距离有所增加,";
+        else
+            trend += "最近一周运动距离没有增加,";
+
+        if(mintues[0] > mintues[1])
+            trend += " 运动时长有所增长";
+        else
+            trend += " 运动时长没有增长";
+
+        dataTrend.setText(trend);
+
+
+
+
+    }
+
+    private void initColumnChart(){
+
+        //X、Y轴值list
+        List<AxisValue> axisXValues = new ArrayList<>();
+
+        //所有的柱子
+        List<Column> columns = new ArrayList<>();
+
+        for (int j = 0; j < date.length; j++) {
+
+            //附属柱子
+            List<SubcolumnValue> mPointValues = new ArrayList<>();
+
+            //显示几个小柱子 这里为3
+            for (int i = 0; i < 1; i++) {
+                //值的大小、颜色
+
+                mPointValues.add(new SubcolumnValue((float)distance[j],color.get(j)));
+            }
+            //设置X轴的柱子所对应的属性名称(底部文字)
+            axisXValues.add(new AxisValue(j).setLabel(date[j]));
+            //设置数据单个大柱子
+            Column column = new Column();
+            column.setValues(mPointValues);
+            //是否显示每个柱子的标签
+            column.setHasLabels(true);
+            //设置每个柱子的Lable是否选中，为false，表示不用选中，一直显示在柱子上
+            column.setHasLabelsOnlyForSelected(true);
+            //将每个属性得列全部添加到List中
+            columns.add(column);
+
+            //底部属性
+            Axis axisBottom = new Axis(axisXValues);
+            //是否显示X轴的网格线
+            axisBottom.setHasLines(false);
+            //分割线颜色
+            axisBottom.setLineColor(Color.parseColor("#ff0000"));
+            //字体颜色
+            axisBottom.setTextColor(Color.GRAY);
+            //字体大小
+            axisBottom.setTextSize(8);
+            //底部文字
+            axisBottom.setName("");
+            //每个柱子的便签是否倾斜着显示
+            axisBottom.setHasTiltedLabels(true);
+            //距离各标签之间的距离,包括离Y轴间距 (0-32之间)
+            axisBottom.setMaxLabelChars(4);
+            //设置是否自动生成轴对象,自动适应表格的范围(设置之后底部标题变成0-5)
+            //axisBottom.setAutoGenerated(true);
+            axisBottom.setHasSeparationLine(true);
+
+            //设置Columns添加到Data中
+            ColumnChartData columnData = new ColumnChartData(columns);
+            //设置x轴在底部显示
+            columnData.setAxisXBottom(axisBottom);
+
+            //左边  属性与上面一致
+            Axis axisLeft = new Axis();
+            axisLeft.setHasLines(false);
+            axisLeft.setName("km");//左边标题
+            axisLeft.setHasTiltedLabels(true);
+            axisLeft.setTextColor(Color.parseColor("#666666"));
+            columnData.setAxisYLeft(axisLeft);
+
+            columnData.setFillRatio(0.7f);
+
+
+            //最后将所有值显示在View中
+            columnChart.setColumnChartData(columnData);
+            //设置行为属性，支持缩放、滑动以及平移
+            columnChart.setInteractive(true);
+           /* columnChart.setZoomType(ZoomType.HORIZONTAL);
+            columnChart.setMaxZoom((float) 2);//最大方法比例
+            columnChart.setContainerScrollEnabled(true, ContainerScrollType.HORIZONTAL);*/
+            Viewport v = columnChart.getMaximumViewport();
+            v.top = (int)StepUtils.findMaxInDoubleArray(distance) + 5;
+            columnChart.setCurrentViewport(v);
+
+
+        }
+
+    }
+
+    private void initPieChart(){
+        List<SliceValue> values = new ArrayList<SliceValue>();
+
+        for (int i = 0; i < mintues.length; ++i) {
+            SliceValue sliceValue = new SliceValue((float) mintues[i], color.get(i));
+            values.add(sliceValue);
+        }
+
+        PieChartData pieChardata = new PieChartData();
+
+        pieChardata.setHasLabels(false);//显示标签
+
+        pieChardata.setHasLabelsOnlyForSelected(true);//不用点击显示占的百分比
+
+        pieChardata.setHasLabelsOutside(false);//占的百分比是否显示在饼图外面
+
+        pieChardata.setHasCenterCircle(true);//是否是环形显示
+
+        pieChardata.setValues(values);//填充数据
+
+        pieChardata.setCenterCircleColor(Color.WHITE);//设置环形中间的颜色
+
+        pieChardata.setCenterCircleScale(0.5f);//设置环形的大小级别
+
+        pieChardata.setCenterText1("运动时长");//环形中间的文字1
+
+        pieChardata.setCenterText1Color(Color.BLACK);//文字颜色
+
+        pieChardata.setCenterText1FontSize(12);//文字大小
+
+
+
+        pieChardata.setCenterText2("最近各周占比");
+
+        pieChardata.setCenterText2Color(Color.BLACK);
+
+        pieChardata.setCenterText2FontSize(10);
+
+        /**这里也可以自定义你的字体   Roboto-Italic.ttf这个就是你的字体库*/
+
+//		Typeface tf = Typeface.createFromAsset(this.getAssets(), "Roboto-Italic.ttf");
+
+//		data.setCenterText1Typeface(tf);
+
+        pieChart.setPieChartData(pieChardata);
+
+        pieChart.setValueSelectionEnabled(true);//选择饼图某一块变大
+
+        pieChart.setAlpha(1.0f);//设置透明度
+
+        pieChart.setCircleFillRatio(1f);//设置饼图大小
+
+
+
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

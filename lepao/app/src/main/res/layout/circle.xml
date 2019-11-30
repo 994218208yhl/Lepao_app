@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tc="http://schemas.android.com/apk/res/com.liuzozo.stepdemo"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#addafd"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+        <com.liuzozo.stepdemo.OtherFunction.CompletedView
+            android:id="@+id/tasks_view"
+            android:layout_width="223dp"
+            android:layout_height="223dp"
+            tc:circleColor="@color/white"
+            tc:radius="50dip"
+            tc:ringBgColor="@color/white2"
+            tc:ringColor="@color/colorRed"
+            tc:strokeWidth="10dip" />
+    </LinearLayout>
+</LinearLayout>

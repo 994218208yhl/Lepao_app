@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tl="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical">
+
+    <com.flyco.tablayout.CommonTabLayout
+        android:id="@+id/commonTabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/color_grey_background"
+        tl:tl_iconVisible="false"
+        tl:tl_indicator_color="@color/color_theme"
+        tl:tl_indicator_width="70dp"
+        tl:tl_textBold="SELECT"
+        tl:tl_textSelectColor="@color/color_background"
+        tl:tl_textUnselectColor="#666666"
+        tl:tl_textsize="15sp" />
+
+
+
+    <com.liuzozo.stepdemo.ui.AMapScrollViewPager
+        android:id="@+id/vp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never" />
+
+   <!-- <ImageView
+        android:id="@+id/line_chart"
+        android:layout_marginTop="100dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/startrun"/>-->
+
+</LinearLayout>

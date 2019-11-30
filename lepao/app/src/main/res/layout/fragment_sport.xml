@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tc="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/sport_fragment_bg">
+
+
+<!--
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+
+            android:orientation="vertical" >-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+        <TextView
+            android:layout_marginTop="30dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="#ffffff"
+            android:text="Datas of Today "/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <com.liuzozo.stepdemo.OtherFunction.CompletedView
+                android:id="@+id/total_distance"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginRight="20dp"
+                tc:circleColor="@color/white"
+                tc:radius="50dip"
+                tc:ringBgColor="@color/white2"
+                tc:ringColor="@color/colorRed"
+                tc:strokeWidth="10dip" />
+
+        <com.liuzozo.stepdemo.OtherFunction.CompletedView
+            android:id="@+id/total_time"
+            android:layout_width="120dp"
+            android:layout_marginLeft="20dp"
+            android:layout_height="120dp"
+            tc:circleColor="@color/white"
+            tc:radius="50dip"
+            tc:ringBgColor="@color/white2"
+            tc:ringColor="@color/colorRed"
+            tc:strokeWidth="10dip" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+            <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="65dp"
+            android:textColor="#ffffff"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:text="Frequency :"/>
+            <TextView
+                android:id="@+id/today_fre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:textColor="#ffffff"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:text="2"/>
+        </LinearLayout>
+
+        </LinearLayout>
+
+            <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:background="#DEDEDE"
+            android:orientation="vertical"
+            android:layout_gravity="center_horizontal"
+            android:padding="15dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="3dp"
+                android:drawableStart="@mipmap/icon_tip"
+                android:gravity="center_vertical"
+                android:text="Notes"
+
+                android:textColor="#333333"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/notes_text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:lineSpacingExtra="3dp"
+                android:text="1.请保持40分钟以上的运动时间"
+                android:textColor="#666666"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/notes_text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:lineSpacingExtra="3dp"
+                android:text="2.尝试有氧运动，心率保持在140~160之间"
+                android:textColor="#666666"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnStart"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="120dp"
+            android:background="@drawable/btn_nor_bg"
+            android:drawableRight="@mipmap/running_icon_b"
+            android:paddingLeft="40sp"
+            android:paddingRight="30sp"
+            android:text="start run"
+            android:textColor="#fff" />
+    </LinearLayout>
+
+
+
+
+    <!--   <TextView
+           android:id="@+id/tv_sport_mile"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_centerInParent="true"
+           android:lines="1"
+           android:text="1.56"
+           android:textColor="#fff"
+           android:textSize="60sp" />
+
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_below="@+id/tv_sport_mile"
+           android:layout_centerInParent="true"
+           android:text="总公里数"
+           android:textColor="#fff"
+           android:textSize="16sp" />
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_alignParentBottom="true"
+           android:orientation="horizontal"
+           android:padding="20dp" >
+
+           <RelativeLayout
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content" >
+
+               <TextView
+                   android:id="@+id/tv_sport_count"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_centerHorizontal="true"
+                   android:ellipsize="end"
+                   android:maxLength="6"
+                   android:text="7"
+                   android:textColor="#fff"
+                   android:textSize="28sp"
+                   android:textStyle="bold" />
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_below="@+id/tv_sport_count"
+                   android:layout_centerHorizontal="true"
+                   android:text="总次数"
+                   android:textColor="#fff"
+                   android:textSize="12sp" />
+           </RelativeLayout>
+
+           <RelativeLayout
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="20dp" >
+
+               <TextView
+                   android:id="@+id/tv_sport_time"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_centerHorizontal="true"
+                   android:ellipsize="end"
+                   android:text="22.83"
+                   android:textColor="#fff"
+                   android:textSize="28sp"
+                   android:textStyle="bold" />
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_below="@+id/tv_sport_time"
+                   android:layout_centerHorizontal="true"
+                   android:text="总时长(分钟)"
+                   android:textColor="#fff"
+                   android:textSize="12sp" />
+           </RelativeLayout>
+       </LinearLayout>
+   </RelativeLayout>-->
+

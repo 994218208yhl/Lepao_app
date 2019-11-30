@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="line">1dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="margin">16dp</dimen>
+
+    <!--标准边距24dp 56dp 72dp 48dp 8dp -->
+    <!--eg:状态栏-->
+    <dimen name="itemize_margin">8dp</dimen>
+    <!--侧滑栏的每一项item-->
+    <dimen name="small_list_item_margin">48dp</dimen>
+    <!--结尾图标距右距离-->
+    <dimen name="right_content_margin">32dp</dimen>
+    <!--tab： 模块标题-->
+    <dimen name="title_margin">56dp</dimen>
+    <!--内容项item-->
+    <dimen name="big_title_margin">72dp</dimen>
+    <dimen name="list_item_margin">72dp</dimen>
+
+    <!--***********************************************************************-->
+    <!--导航栏字体大小-->
+    <dimen name="tab_textsize">10sp</dimen>
+    <!--字体标准尺寸-->
+    <!--按钮-->
+    <dimen name="button">14sp</dimen>
+    <!--菜单-->
+    <dimen name="menu">12sp</dimen>
+    <!--内容-->
+    <dimen name="body">14sp</dimen>
+    <!--小标题-->
+    <dimen name="subhead">15sp</dimen>
+    <!--标题-->
+    <dimen name="title">20sp</dimen>
+    <!--大标题-->
+    <dimen name="headline">24sp</dimen>
+
+    <dimen name="nav_header_vertical_spacing">16dp</dimen>
+    <dimen name="nav_header_height">160dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+</resources>

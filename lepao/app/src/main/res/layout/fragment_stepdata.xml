@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:id="@+id/rl_tool"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:background="#FFF">
+                <TextView
+                    android:id="@+id/tv_month_day"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="16dp"
+                    android:textColor="#000"
+                    android:textSize="26sp"
+                    android:textStyle="bold"
+                    />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/tv_month_day"
+                    android:orientation="vertical"
+                    android:paddingBottom="12dp"
+                    android:paddingLeft="6dp"
+                    android:paddingRight="6dp"
+                    android:paddingTop="12dp">
+
+                    <TextView
+                        android:id="@+id/tv_year"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textColor="#000"
+                        android:textSize="10sp"/>
+
+                    <TextView
+                        android:id="@+id/tv_lunar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textColor="#000"
+                        android:textSize="10sp"/>
+
+                </LinearLayout>
+
+                <FrameLayout
+                    android:id="@+id/f1_current"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="12dp"
+                    android:background="@drawable/bg_ripple">
+
+                    <ImageView
+                        android:id="@+id/ib_calendar"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:tint="#000000"
+                        android:contentDescription="@string/app_name"
+                        android:scaleType="centerInside"
+                        android:src="@mipmap/ic_calendar"/>
+
+                    <TextView
+                        android:id="@+id/tv_current_day"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="2dp"
+                        android:gravity="center"
+                        android:text="13"
+                        android:textColor="#000"
+                        android:textSize="12sp"/>
+                </FrameLayout>
+            </RelativeLayout>
+
+            <com.haibin.calendarview.CalendarLayout
+
+                android:id="@+id/calendarLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:calendar_content_view_id="@+id/scrollView">
+
+
+                <com.haibin.calendarview.CalendarView
+                    android:id="@+id/calendarView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#fff"
+                    app:calendar_padding="10dp"
+                    app:current_month_text_color="#333333"
+                    app:current_month_lunar_text_color="#CFCFCF"
+                    app:min_year="2004"
+                    app:max_year="2100"
+                    app:other_month_text_color="#e1e1e1"
+                    app:other_month_lunar_text_color="#e1e1e1"
+                    app:scheme_text="假"
+                    app:scheme_text_color="#333"
+                    app:scheme_theme_color="#128c4b"
+                    app:selected_lunar_text_color="#CFCFCF"
+                    app:month_view="com.liuzozo.stepdemo.calendarview.custom.CustomMonthView"
+                    app:week_view="com.liuzozo.stepdemo.calendarview.custom.CustomWeekView"
+                    app:selected_text_color="#333"
+                    app:selected_theme_color="#80cfcfcf"
+                    app:week_background="#fff"
+                    app:week_text_color="#111111"
+                    app:week_start_with="sun"
+                    app:week_view_scrollable="true"
+                    app:year_view_day_text_color="#333333"
+                    app:year_view_day_text_size="9sp"
+                    app:year_view_month_text_color="#ff0000"
+                    app:year_view_month_text_size="20sp"
+                    app:month_view_show_mode="mode_only_current"
+                    app:year_view_scheme_color="#f17706"/>
+
+
+                <android.support.v4.widget.NestedScrollView
+                    android:id="@+id/scrollView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fillViewport="true"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/data_bg"
+
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/sport_record_list"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:id="@+id/item_sport_record"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:background="#fff"
+                                android:gravity="center_vertical"
+                                android:paddingStart="20dp"
+                                android:text="跑步成绩"
+                                android:textColor="#333333"
+                                android:textSize="16sp" />
+
+                            <android.support.v7.widget.RecyclerView
+                                android:id="@+id/recyclerView"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:focusable="false"
+                                android:focusableInTouchMode="false" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="#fff"
+                            android:gravity="center_vertical"
+                            android:paddingStart="15dp"
+                            android:text="运动建议"
+                            android:textColor="#333333"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#fff"
+                            android:gravity="center_vertical"
+                            android:lineSpacingExtra="3dp"
+                            android:paddingLeft="15dp"
+                            android:paddingRight="15dp"
+                            android:paddingBottom="20dp"
+                            android:text="刚开始不要追求跑步速度和距离,一坚持更久为目的吧!"
+                            android:textColor="#666666"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </android.support.v4.widget.NestedScrollView>
+
+
+
+            </com.haibin.calendarview.CalendarLayout>
+        </LinearLayout>
+    </android.support.design.widget.CoordinatorLayout>
+
+</LinearLayout>

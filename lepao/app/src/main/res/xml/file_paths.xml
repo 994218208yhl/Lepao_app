@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <external-path path="Android/data/com.liuzozo.stepdemo/" name="files_root" />
+    <external-path path="." name="external_storage_root" />
+    <external-path
+        name="image"
+        path="DCIM/"/>
+    <root-path name="root_path" path="."/>
+
+</paths>
+<!--
+<?xml version="1.0" encoding="utf-8"?>
+<resource xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <external-path
+        name="images"
+        path="demo/" />
+    <path>
+
+        <root-path name="root_path" path="."/>
+    </path>
+</resource>-->
+
+
